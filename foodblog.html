@@ -1,0 +1,333 @@
+\<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Blog</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Hero Section Styling */
+        .hero-section {
+            background-image: url('https://paulelam.com/wp-content/uploads/2019/12/shutterstock_467823860.jpg'); /* Replace with your image path */
+            background-size: cover;
+            height: 60vh;
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            height: 100%;
+        }
+
+        .breadcrumb-item.active {
+            color: #FFD700; /* Yellow color */
+        }
+
+        .section-header {
+            color: #FFD700; /* Yellow color */
+            font-size: 2rem; /* Increased font size */
+        }
+
+        .recipe-details {
+            display: none;
+        }
+
+        .card-body {
+            padding: 1.25rem;
+        }
+
+        /* Increase font size for main content */
+        body {
+            font-size: 1.1rem; /* Increased body font size */
+        }
+
+        h1, h2, h3, h4 {
+            font-size: 1.5rem; /* Larger header font size */
+        }
+
+        .btn, .navbar-brand, .nav-link {
+            font-size: 1.2rem; /* Larger font size for buttons and links */
+        }
+
+        .hero-section h1 {
+            font-size: 3rem; /* Larger hero section title */
+        }
+
+        .hero-section p {
+            font-size: 1.5rem; /* Larger hero section description */
+        }
+
+        /* Buttons in yellow */
+        .btn-danger {
+            background-color: #FFD700; /* Yellow color for buttons */
+            color: #000; /* Black text color */
+        }
+
+        .btn-danger:hover {
+            background-color: #FFCC00; /* Lighter yellow on hover */
+        }
+
+        .btn-primary {
+            background-color: #FFD700; /* Yellow color for primary buttons */
+            color: #000; /* Black text color */
+        }
+
+        .btn-primary:hover {
+            background-color: #FFCC00; /* Lighter yellow on hover */
+        }
+
+        .nav-link {
+            color: #FFD700 !important; /* Yellow color for navigation links */
+        }
+
+        .nav-link:hover {
+            color: #FFCC00 !important; /* Lighter yellow on hover */
+        }
+
+        .card-title {
+            font-size: 1.3rem; /* Increase card title font size */
+            color: #FFD700; /* Yellow color */
+        }
+
+        .card-text {
+            font-size: 1.1rem; /* Increase card text font size */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Food Blog</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#recipes">Recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="overlay">
+            <div class="d-flex justify-content-center align-items-center h-100 text-center text-light">
+                <div>
+                    <h1 class="display-3 text-warning">Welcome to the Food Blog</h1>
+                    <p class="lead text-light">Explore delicious recipes and culinary tips.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#" class="text-primary">Home</a></li>
+            <li class="breadcrumb-item"><a href="#" class="text-primary">Recipes</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Blog Post</li>
+        </ol>
+    </nav>
+
+    <!-- Recipes Section -->
+    <section id="recipes" class="container mt-5">
+        <h2 class="section-header text-success">Our Latest Recipes</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.3MJODhMHPQg6v11AKki79QHaFj&pid=Api&P=0&h=180" class="card-img-top" alt="Recipe Image">
+                    <div class="card-body">
+                        <h5 class="card-title text-success">Spaghetti Carbonara</h5>
+                        <p class="card-text text-muted">A creamy pasta dish with eggs, cheese, pancetta, and pepper.</p>
+                        <button class="btn btn-danger view-recipe-btn" data-recipe="1">View Recipe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="https://tse3.mm.bing.net/th?id=OIP.2gPvjIKPIadnYDMcz11BigHaGb&pid=Api&P=0&h=180" class="card-img-top" alt="Recipe Image">
+                    <div class="card-body">
+                        <h5 class="card-title text-success">Chicken Stir-Fry</h5>
+                        <p class="card-text text-muted">A quick and healthy stir-fry with chicken, vegetables, and soy sauce.</p>
+                        <button class="btn btn-danger view-recipe-btn" data-recipe="2">View Recipe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.mxRMlqmed_ZCcZeDEsvgTgHaFI&pid=Api&P=0&h=180" class="card-img-top" alt="Recipe Image">
+                    <div class="card-body">
+                        <h5 class="card-title text-success">Vegan Tacos</h5>
+                        <p class="card-text text-muted">Flavorful vegan tacos with spiced beans, avocado, and salsa.</p>
+                        <button class="btn btn-danger view-recipe-btn" data-recipe="3">View Recipe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipe Details -->
+    <div id="recipe-details-1" class="recipe-details container mt-5">
+        <h2 class="text-success">Spaghetti Carbonara</h2>
+        <p class="lead text-muted">A creamy pasta dish with eggs, cheese, pancetta, and pepper.</p>
+
+        <h4>Ingredients:</h4>
+        <ul>
+            <li>200g Spaghetti</li>
+            <li>100g Pancetta</li>
+            <li>2 Eggs</li>
+            <li>50g Pecorino Romano cheese</li>
+            <li>Freshly ground black pepper</li>
+            <li>Salt</li>
+        </ul>
+
+        <h4>Instructions:</h4>
+        <ol>
+            <li>Boil the spaghetti in salted water according to package instructions.</li>
+            <li>Fry the pancetta in a pan until crispy.</li>
+            <li>Beat the eggs in a bowl with grated cheese and black pepper.</li>
+            <li>Combine the cooked pasta with the pancetta, then mix in the egg mixture.</li>
+            <li>Serve immediately with extra cheese and pepper on top.</li>
+        </ol>
+
+        <h4>Tips & Tricks:</h4>
+        <ul>
+            <li>Use fresh eggs for a creamy texture.</li>
+            <li>Don't overcook the pasta to keep it al dente.</li>
+        </ul>
+
+        <button class="btn btn-primary mt-4 close-recipe" data-recipe="1">Back to Recipes</button>
+    </div>
+
+    <div id="recipe-details-2" class="recipe-details container mt-5">
+        <h2 class="text-success">Chicken Stir-Fry</h2>
+        <p class="lead text-muted">A quick and healthy stir-fry with chicken, vegetables, and soy sauce.</p>
+
+        <h4>Ingredients:</h4>
+        <ul>
+            <li>2 Chicken breasts</li>
+            <li>1 Bell pepper</li>
+            <li>1 Carrot</li>
+            <li>2 tbsp Soy sauce</li>
+            <li>1 tbsp Olive oil</li>
+            <li>Garlic, minced</li>
+            <li>Salt and pepper to taste</li>
+        </ul>
+
+        <h4>Instructions:</h4>
+        <ol>
+            <li>Cut the chicken into bite-sized pieces and season with salt and pepper.</li>
+            <li>Heat oil in a pan and stir-fry the chicken until golden and cooked through.</li>
+            <li>Add the sliced vegetables and garlic to the pan, stir-fry for another 3-4 minutes.</li>
+            <li>Pour in the soy sauce and stir everything together until well-coated.</li>
+            <li>Serve with rice or noodles.</li>
+        </ol>
+
+        <h4>Tips & Tricks:</h4>
+        <ul>
+            <li>Use a wok for the best stir-fry results.</li>
+            <li>Feel free to add your favorite veggies to the stir-fry.</li>
+        </ul>
+
+        <button class="btn btn-primary mt-4 close-recipe" data-recipe="2">Back to Recipes</button>
+    </div>
+
+    <div id="recipe-details-3" class="recipe-details container mt-5">
+        <h2 class="text-success">Vegan Tacos</h2>
+        <p class="lead text-muted">Flavorful vegan tacos with spiced beans, avocado, and salsa.</p>
+
+        <h4>Ingredients:</h4>
+        <ul>
+            <li>1 Can black beans</li>
+            <li>1 Avocado</li>
+            <li>1 Tomato</li>
+            <li>1 Red onion</li>
+            <li>Corn tortillas</li>
+            <li>1 tbsp Chili powder</li>
+            <li>1 tbsp Lime juice</li>
+            <li>Salt and pepper to taste</li>
+        </ul>
+
+        <h4>Instructions:</h4>
+        <ol>
+            <li>Warm the tortillas in a dry pan or oven.</li>
+            <li>Heat the black beans in a pan with chili powder, salt, and pepper.</li>
+            <li>Slice the avocado, tomato, and onion.</li>
+            <li>Assemble the tacos by adding beans, avocado, tomato, and onion on the tortillas.</li>
+            <li>Top with lime juice and serve with salsa or hot sauce.</li>
+        </ol>
+
+        <h4>Tips & Tricks:</h4>
+        <ul>
+            <li>Use fresh salsa for extra flavor.</li>
+            <li>Add a dollop of vegan sour cream if desired.</li>
+        </ul>
+
+        <button class="btn btn-primary mt-4 close-recipe" data-recipe="3">Back to Recipes</button>
+    </div>
+
+    <!-- Footer Section -->
+    <section id="contact" class="bg-light py-5">
+        <div class="container">
+            <h2 class="section-header text-success">Contact Us</h2>
+            <p>Have questions, feedback, or want to collaborate? We’d love to hear from you! Get in touch with us using the
+                form below:</p>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Your Message</label>
+                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Toggle recipe details visibility
+        document.querySelectorAll('.view-recipe-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                var recipeId = this.getAttribute('data-recipe');
+                document.getElementById('recipe-details-' + recipeId).style.display = 'block';
+                document.getElementById('recipes').style.display = 'none';
+            });
+        });
+
+        // Close recipe details and show the recipe section again
+        document.querySelectorAll('.close-recipe').forEach(button => {
+            button.addEventListener('click', function () {
+                var recipeId = this.getAttribute('data-recipe');
+                document.getElementById('recipe-details-' + recipeId).style.display = 'none';
+                document.getElementById('recipes').style.display = 'block';
+            });
+        });
+    </script>
+</body>
+
+</html>
